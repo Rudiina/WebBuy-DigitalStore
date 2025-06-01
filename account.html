@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #F5F8FA;
+            font-family: sans-serif;
+        }
+
+        #rudina {
+            position: absolute;
+            top: 85px; 
+            left: 18%; 
+            transform: translateX(-50%); 
+            z-index: 9999; 
+        }
+        #info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #ffffff95;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            background-color: #88C273;
+            color: #FFFFFF;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+
+        .card-content {
+            margin-top: 20px;
+        }
+
+        .card-content p {
+            font-size: 16px;
+            color: #212b46;
+            margin: 10px 0;
+        }
+
+        .card-content .label {
+            font-weight: bold;
+        }
+
+        .card-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .card-footer button {
+            background-color: #88C273;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-footer button:hover {
+            background-color: #1d4c73ea;
+        }
+
+        #info-container:empty {
+            text-align: center;
+            color: #999;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Cart Link */
+        #cart-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        
+        }
+        #cart-link img {
+            width: 120px;
+            border-radius: 100%;
+        }
+
+/* Logo container styling */
+.logo-container {
+  display: flex; left:-40px; 
+  top: -20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: #022436;
+  border: 3px solid #42c474;
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #000000bb;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.logo-container:hover {
+  background-color:#649b50;
+  border-color: #288388;
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0px #000000b0, 15px 15px 20px rgba(48, 184, 141, 0.4);
+}
+
+/* Animated radial glow */
+.logo-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(48, 240, 176, 0.523), transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease-out;
+}
+
+.logo-container:hover::before {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Linear gradient sweep on hover */
+.logo-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0) 50%,
+    rgb(16, 79, 126) 75%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: translate(-100%, -100%) rotate(45deg);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.logo-container:hover::after {
+  animation: linearSweep 0.8s ease-in-out forwards;
+}
+
+@keyframes linearSweep {
+  0% {
+    transform: translate(-100%, -100%) rotate(45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(100%, 100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Logo styling with an image inside */
+.logo {
+  width: 120px;
+  height: 120px;
+  background: url('/foto/logo.png') no-repeat center;
+  background-size: cover;
+  border-radius: 50%; /* Optional: to make it circular */
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover .logo {
+  transform: scale(1.1) rotate(10deg);
+  animation: spinAndZoom 4.5s ease infinite;
+}
+
+@keyframes spinAndZoom {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.logo-text {
+  font-size: 20px;
+  color: #e5dede;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-container:hover .logo-text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+
+    </style>
+</head>
+<body>
+    
+
+    <div id="info-container">  
+       
+        <div class="card">
+            <div class="card-header">User Information</div>
+            <div class="card-content">
+                <p><strong>Name:</strong> </p>
+                <p><strong>Last Name:</strong> </p>
+                <p><strong>Gender:</strong> </p>
+                <p><strong>Password:</strong> </p>
+            </div>
+          
+        </div>
+    </div>
+    <div id="rudina">
+    <div class="logo-container">
+        <div class="logo"></div>
+ <div class="logo-text">Shop Smart, Dream Big!</div>
+      </div>
+      </div>
+
+<br>
+      <br>
+      
+      <div style="text-align: center; margin: 20px 0; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 95%; margin: 0 auto;">
+        <h2 style="font-size: 28px; color: #1e562c; margin-bottom: 15px;">
+            Welcome to Your Ultimate Shopping Destination!
+        </h2>
+        <p style="font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px;">
+            Discover a world of premium products, specially curated to enhance your lifestyle. From the latest tech gadgets to elegant fashion, and everything in between – we've got it all. 
+            Enjoy a seamless and delightful shopping experience with our user-friendly platform, tailored just for you.
+        </p>
+        <p style="font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px;">
+            <strong>Why Shop With Us?</strong> <br>
+            - Unbeatable prices on top-quality products <br>
+            - Exclusive discounts and special offers <br>
+            - Fast and secure checkout process <br>
+            - 24/7 Customer Support, ready to assist you
+        </p>
+        <p style="font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 20px;">
+            Whether you're shopping for the latest trends or timeless essentials, <strong>WebBuy</strong> is here to make your online shopping experience smooth, enjoyable, and rewarding.
+        </p>
+        <p style="font-size: 16px; color: #333; line-height: 1.8;">
+            <strong>Let’s make shopping a joy, together!</strong> <br>
+            <span style="color: #888;">Your satisfaction is our priority.</span>
+        </p>
+        <div style="margin-top: 30px;">
+            <a href="../index.html" style="text-decoration: none; color: #ffffff; background-color: #88C273; padding: 12px 30px; border-radius: 5px; font-size: 18px; transition: background-color 0.3s;">
+                Start Shopping Now
+            </a>
+        </div>
+        <div style="margin-top: 20px; font-size: 14px; color: #999;">
+            <p><i>Secure Payments | Fast Delivery | 24/7 Customer Support</i></p>
+            <p><i>Shop Smart, Shop Confidently with WebBuy</i></p>
+        </div>
+    </div>
+    
+  <br>
+
+    <a href="cart.html" id="cart-link">
+        <img src="../foto/CART.jpg" alt="Cart">
+    </a>
+   
+
+
+    <script src="scriptuser.js"></script>
+</body>
+</html>

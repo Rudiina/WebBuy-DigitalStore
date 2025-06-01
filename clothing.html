@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FashionHub - Online Clothing Store</title>
+    <link rel="stylesheet" href="stilkat.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Fashion</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../kategori.html">Categories</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <h2>Featured Clothing</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="37" onclick="openProductDetails('product1')">
+                <img src="../../foto/c1.jpg" alt="Summer Dress">
+                <h3>Summer Dress</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="product-card" data-id="40" onclick="openProductDetails('product4')">
+                <img src="../../foto/c4.jpg" alt="Skinny Jeans">
+                <h3>Skinny Jeans</h3>
+                <p>$59.99</p>
+            </div>
+            <div class="product-card" data-id="39" onclick="openProductDetails('product3')">
+                <img src="../../foto/c3.jpg" alt="Casual Shirt">
+                <h3>Casual Shirt</h3>
+                <p>$39.99</p>
+            </div>
+            <div class="product-card" data-id="38" onclick="openProductDetails('product2')">
+                <img src="../../foto/c2.jpg" alt="Men's Blazer">
+                <h3>Men's Blazer</h3>
+                <p>$89.99</p>
+            </div>
+            
+            <div class="product-card" data-id="41" onclick="openProductDetails('product5')">
+                <img src="../../foto/c5.jpg" alt="Evening Gown">
+                <h3>Evening Gown</h3>
+                <p>$149.99</p>
+            </div>
+            <div class="product-card" data-id="42"onclick="openProductDetails('product6')">
+                <img src="../../foto/c6.jpg" alt="Sportswear Set">
+                <h3>Sportswear Set</h3>
+                <p>$79.99</p>
+            </div>
+            <div class="product-card" data-id="43" onclick="openProductDetails('product7')">
+                <img src="../../foto/c7.jpg" alt="Winter Coat">
+                <h3>Winter Coat</h3>
+                <p>$129.99</p>
+            </div>
+            <div class="product-card" data-id="44" onclick="openProductDetails('product8')">
+                <img src="../../foto/c8.jpg" alt="Leather Jacket">
+                <h3>Leather Jacket</h3>
+                <p>$199.99</p>
+            </div>
+            <div class="product-card" data-id="45" onclick="openProductDetails('product9')">
+                <img src="../../foto/c9.jpg" alt="Printed T-Shirt">
+                <h3>Printed T-Shirt</h3>
+                <p>$19.99</p>
+            </div>
+            <div class="product-card"  data-id="46" onclick="openProductDetails('product10')">
+                <img src="../../foto/c10.jpg" alt="Formal Trousers">
+                <h3>Formal Trousers</h3>
+                <p>$69.99</p>
+            </div>
+            <div class="product-card"  data-id="47" onclick="openProductDetails('product11')">
+                <img src="../../foto/c11.jpg" alt="Cardigan">
+                <h3>Cardigan</h3>
+                <p>$39.99</p>
+            </div>
+            <div class="product-card"  data-id="48" onclick="openProductDetails('product12')">
+                <img src="../../foto/c12.jpg" alt="Athletic Shorts">
+                <h3>Athletic Shorts</h3>
+                <p>$24.99</p>
+            </div>            
+        </div>
+    </section>
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">×</span>
+            <div class="modal-left">
+                <img id="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p><br>
+                <button id="add-to-cart-btn" data-id="123" >Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Stay stylish with FashionHub.</p>
+        </div>
+    </footer>
+
+    <script >
+        const products = {
+    product1: {
+        image: '../../foto/c1.jpg',
+        title: 'Summer Dress',
+        description: 'A breezy dress perfect for sunny days.',
+        price: '$49.99',
+    },
+    product2: {
+        image: '../../foto/c2.jpg',
+        title: 'Men\'s Blazer',
+        description: 'A sleek blazer for formal occasions.',
+        price: '$89.99',
+    },
+    product3: {
+        image: '../../foto/c3.jpg',
+        title: 'Casual Shirt',
+        description: 'Stay relaxed with this comfortable shirt.',
+        price: '$39.99',
+    },
+    product4: {
+        image: '../../foto/c4.jpg',
+        title: 'Skinny Jeans',
+        description: 'Trendy and snug-fitting skinny jeans.',
+        price: '$59.99',
+    },
+    product5: {
+        image: '../../foto/c5.jpg',
+        title: 'Evening Gown',
+        description: 'Elegant gown for special evenings.',
+        price: '$149.99',
+    },
+    product6: {
+        image: '../../foto/c6.jpg',
+        title: 'Sportswear Set',
+        description: 'Comfortable and stylish sportswear.',
+        price: '$79.99',
+    },
+    product7: {
+        image: '../../foto/c7.jpg',
+        title: 'Winter Coat',
+        description: 'Stay warm with this premium winter coat.',
+        price: '$129.99',
+    },
+    product8: {
+        image: '../../foto/c8.jpg',
+        title: 'Leather Jacket',
+        description: 'Classic leather jacket for all occasions.',
+        price: '$199.99',
+    },
+    product9: {
+        image: '../../foto/c9.jpg',
+        title: 'Printed T-Shirt',
+        description: 'Stylish t-shirt with unique prints.',
+        price: '$19.99',
+    },
+    product10: {
+        image: '../../foto/c10.jpg',
+        title: 'Formal Trousers',
+        description: 'Smart trousers for office or events.',
+        price: '$69.99',
+    },
+    product11: {
+        image: '../../foto/c11.jpg',
+        title: 'Cardigan',
+        description: 'Soft and cozy cardigan for layering.',
+        price: '$39.99',
+    },
+    product12: {
+        image: '../../foto/c12.jpg',
+        title: 'Athletic Shorts',
+        description: 'Comfortable shorts for active days.',
+        price: '$24.99',
+    },
+};
+
+    </script>
+    <script src="search.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

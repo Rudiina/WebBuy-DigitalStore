@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SportZone - Gear & Essentials</title>
+    <link rel="stylesheet" href="stilkat.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>SportZone</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../kategori.html">Categories</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for sports gear and equipment...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <h2>Featured Sports Gear</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="61" onclick="openProductDetails('product1')">
+                <img src="../../foto/s1.jpg" alt="Basketball">
+                <h3>Pro Basketball</h3>
+                <p>$29.99</p>
+            </div>
+            <div class="product-card" data-id="62" onclick="openProductDetails('product2')">
+                <img src="../../foto/s2.jpg" alt="Running Shoes">
+                <h3>Lightweight Running Shoes</h3>
+                <p>$79.99</p>
+            </div>
+            <div class="product-card" data-id="63" onclick="openProductDetails('product3')">
+                <img src="../../foto/s3.jpg" alt="Soccer Ball">
+                <h3>Official Soccer Ball</h3>
+                <p>$24.99</p>
+            </div>
+            <div class="product-card" data-id="64" onclick="openProductDetails('product4')">
+                <img src="../../foto/s4.jpg" alt="Tennis Racket">
+                <h3>Professional Tennis Racket</h3>
+                <p>$99.99</p>
+            </div>
+            <div class="product-card" data-id="65" onclick="openProductDetails('product5')">
+                <img src="../../foto/s5.jpg" alt="Cycling Helmet">
+                <h3>Premium Cycling Helmet</h3>
+                <p>$59.99</p>
+            </div>
+            <div class="product-card" data-id="66" onclick="openProductDetails('product6')">
+                <img src="../../foto/s6.jpg" alt="Golf Set">
+                <h3>Complete Golf Set</h3>
+                <p>$299.99</p>
+            </div>
+            <div class="product-card" data-id="67"  onclick="openProductDetails('product7')">
+                <img src="../../foto/s7.jpg" alt="Sports Mat">
+                <h3>High-Performance Sports Mat</h3>
+                <p>$19.99</p>
+            </div>
+            <div class="product-card" data-id="68" onclick="openProductDetails('product8')">
+                <img src="../../foto/s8.jpg" alt="Hiking Backpack">
+                <h3>Hiking Backpack</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="product-card" data-id="69" onclick="openProductDetails('product9')">
+                <img src="../../foto/s9.jpg" alt="Boxing Gloves">
+                <h3>Pro Boxing Gloves</h3>
+                <p>$39.99</p>
+            </div>
+            <div class="product-card"data-id="70" onclick="openProductDetails('product10')">
+                <img src="../../foto/s10.jpg" alt="Sports Whistle">
+                <h3>Professional Sports Whistle</h3>
+                <p>$14.99</p>
+            </div>            
+            <div class="product-card" data-id="71" onclick="openProductDetails('product11')">
+                <img src="../../foto/s11.jpg" alt="Set of Sports Balls">
+                <h3>Set of Sports Balls</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="product-card" data-id="72" onclick="openProductDetails('product12')">
+                <img src="../../foto/s12.jpg" alt="Water Bottle">
+                <h3>Insulated Water Bottle</h3>
+                <p>$19.99</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">×</span>
+            <div class="modal-left">
+                <img id="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p><br>
+                <button id="add-to-cart-btn" data-id="123">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>Unleash your potential with top-quality sports gear from SportZone.</p>
+        </div>
+    </footer>
+
+    <script >
+        // Product Data
+const products = {
+    product1: {
+        image: "../../foto/s1.jpg",
+        title: "Pro Basketball",
+        description: "High-quality basketball for indoor and outdoor play.",
+        price: "$29.99"
+    },
+    product2: {
+        image: "../../foto/s2.jpg",
+        title: "Lightweight Running Shoes",
+        description: "Comfortable running shoes for all terrains and long runs.",
+        price: "$79.99"
+    },
+    product3: {
+        image: "../../foto/s3.jpg",
+        title: "Official Soccer Ball",
+        description: "FIFA-approved soccer ball for professional and recreational games.",
+        price: "$24.99"
+    },
+    product4: {
+        image: "../../foto/s4.jpg",
+        title: "Professional Tennis Racket",
+        description: "Designed for precision and power in every shot.",
+        price: "$99.99"
+    },
+    product5: {
+        image: "../../foto/s5.jpg",
+        title: "Premium Cycling Helmet",
+        description: "Lightweight helmet with advanced safety features.",
+        price: "$59.99"
+    },
+    product6: {
+        image: "../../foto/s6.jpg",
+        title: "Complete Golf Set",
+        description: "All-in-one golf set for beginners and enthusiasts.",
+        price: "$299.99"
+    },
+    product7: {
+        image: "../../foto/s7.jpg",
+        title: "High-Performance Sports Mat",
+        description: "A durable and versatile mat designed for all your athletic activities, from core workouts to stretching.",
+        price: "$19.99"
+    },
+    product8: {
+        image: "../../foto/s8.jpg",
+        title: "Hiking Backpack",
+        description: "Spacious and durable backpack for outdoor adventures.",
+        price: "$49.99"
+    },
+    product9: {
+        image: "../../foto/s9.jpg",
+        title: "Pro Boxing Gloves",
+        description: "Ergonomic gloves for comfort and performance in training.",
+        price: "$39.99"
+    },
+    product10: {
+        image: "../../foto/s10.jpg", 
+        title: "Professional Sports Whistle",
+        description: "Durable and loud whistle, perfect for coaches, referees, and sports enthusiasts.",
+        price: "$14.99"
+    },
+    product11: {
+        image: "../../foto/s11.jpg", 
+        title: "Set of Sports Balls",
+        description: "Includes a basketball, soccer ball, and volleyball for all your favorite games.",
+        price: "$49.99"
+    },
+    product12: {
+        image: "../../foto/s12.jpg",
+        title: "Insulated Water Bottle",
+        description: "Keep your beverages hot or cold during workouts.",
+        price: "$19.99"
+    }
+};
+    </script>
+    <script src="search.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

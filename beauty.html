@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>StyleAura - Fashion & Beauty</title>
+    <link rel="stylesheet" href="stilkat.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>StyleAura</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../kategori.html">Categories</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for style and beauty essentials...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <p>Find products to enhance your style and wellness.</p>
+        <div class="product-grid">
+            <div class="product-card"  data-id="13" onclick="openProductDetails('product1')">
+                <img src="../../foto/f1.jpg" alt="Skincare Set">
+                <h3>Deluxe Skincare Set</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="product-card" data-id="14" onclick="openProductDetails('product2')">
+                <img src="../../foto/f2.jpg" alt="Perfume">
+                <h3>Signature Perfume</h3>
+                <p>$89.99</p>
+            </div>
+            <div class="product-card"  data-id="15" onclick="openProductDetails('product3')">
+                <img src="../../foto/f3.jpg" alt="Makeup Kit">
+                <h3>Pro Makeup Kit</h3>
+                <p>$59.99</p>
+            </div>
+            <div class="product-card" data-id="16" onclick="openProductDetails('product4')">
+                <img src="../../foto/f4.jpg" alt="Fitness Tracker">
+                <h3>Smart Fitness Tracker</h3>
+                <p>$79.99</p>
+            </div>
+            <div class="product-card" data-id="17" onclick="openProductDetails('product5')">
+                <img src="../../foto/f5.jpg" alt="Hair Styling Kit">
+                <h3>Hair Styling Kit</h3>
+                <p>$39.99</p>
+            </div>
+            <div class="product-card" data-id="18" onclick="openProductDetails('product6')">
+                <img src="../../foto/f6.jpg" alt="Luxury Watch">
+                <h3>Luxury Watch</h3>
+                <p>$149.99</p>
+            </div>
+            <div class="product-card" data-id="19" onclick="openProductDetails('product7')">
+                <img src="../../foto/f7.jpg" alt="Yoga Mat">
+                <h3>Premium Yoga Mat</h3>
+                <p>$29.99</p>
+            </div>
+            <div class="product-card" data-id="20" onclick="openProductDetails('product8')">
+                <img src="../../foto/f8.jpg" alt="Facial Roller">
+                <h3>Crystal Facial Roller</h3>
+                <p>$24.99</p>
+            </div>
+            <div class="product-card" data-id="21" onclick="openProductDetails('product9')">
+                <img src="../../foto/f9.jpg" alt="Nail Care Kit">
+                <h3>Complete Nail Care Kit</h3>
+                <p>$34.99</p>
+            </div>
+            <div class="product-card" data-id="22"  onclick="openProductDetails('product10')">
+                <img src="../../foto/f10.jpg" alt="Luxury Lipstick Set">
+                <h3>Luxury Lipstick Set</h3>
+                <p>$54.99</p>
+            </div>
+            <div class="product-card" data-id="23"  onclick="openProductDetails('product11')">
+                <img src="../../foto/f11.jpg" alt="Sunglasses">
+                <h3>Chic Sunglasses</h3>
+                <p>$24.99</p>
+            </div>
+            <div class="product-card" data-id="24" onclick="openProductDetails('product12')">
+                <img src="../../foto/f12.jpg" alt="Body Lotion">
+                <h3>Moisturizing Body Lotion</h3>
+                <p>$19.99</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">×</span>
+            <div class="modal-left">
+                <img id="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p><br>
+                <button id="add-to-cart-btn" data-id="123" >Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Elevate your style and embrace wellness with StyleAura.</p>
+        </div>
+    </footer>
+
+    <script>
+const products = {
+    product1: {
+        image: "../../foto/f1.jpg",
+        title: "Deluxe Skincare Set",
+        description: "A complete set of premium skincare essentials for glowing, healthy skin.",
+        price: "$49.99"
+    },
+    product2: {
+        image: "../../foto/f2.jpg",
+        title: "Signature Perfume",
+        description: "An elegant and lasting fragrance that defines your style.",
+        price: "$89.99"
+    },
+    product3: {
+        image: "../../foto/f3.jpg",
+        title: "Pro Makeup Kit",
+        description: "A comprehensive makeup kit for flawless looks every day.",
+        price: "$59.99"
+    },
+    product4: {
+        image: "../../foto/f4.jpg",
+        title: "Smart Fitness Tracker",
+        description: "Track your fitness goals with precision and style.",
+        price: "$79.99"
+    },
+    product5: {
+        image: "../../foto/f5.jpg",
+        title: "Hair Styling Kit",
+        description: "A versatile styling kit for perfect hair every time.",
+        price: "$39.99"
+    },
+    product6: {
+        image: "../../foto/f6.jpg",
+        title: "Luxury Watch",
+        description: "Timeless design meets modern craftsmanship in this luxury watch.",
+        price: "$149.99"
+    },
+    product7: {
+        image: "../../foto/f7.jpg",
+        title: "Premium Yoga Mat",
+        description: "A durable, non-slip yoga mat for your wellness routines.",
+        price: "$29.99"
+    },
+    product8: {
+        image: "../../foto/f8.jpg",
+        title: "Crystal Facial Roller",
+        description: "Rejuvenate your skin with this soothing facial roller.",
+        price: "$24.99"
+    },
+    product9: {
+        image: "../../foto/f9.jpg",
+        title: "Complete Nail Care Kit",
+        description: "Professional-grade tools for perfect nails at home.",
+        price: "$34.99"
+    },
+    product10: {
+        image: "../../foto/f10.jpg",
+        title: "Luxury Lipstick Set",
+        description: "A collection of vibrant, long-lasting lipsticks.",
+        price: "$54.99"
+    },
+    product11: {
+        image: "../../foto/f11.jpg",
+        title: "Chic Sunglasses",
+        description: "Stylish sunglasses to elevate any outfit.",
+        price: "$24.99"
+    },
+    product12: {
+        image: "../../foto/f12.jpg",
+        title: "Moisturizing Body Lotion",
+        description: "A hydrating body lotion for soft, smooth skin.",
+        price: "$19.99"
+    }
+};
+    </script>
+    <script src="search.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

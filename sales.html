@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stilside.css">
+  <link rel="stylesheet" href="categories/stilkat.css">
+  <title>WebBuy Sales</title>
+</head>
+
+<body>
+  <header id="head">
+    <div class="logo">
+      <h1>WebBuy</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for books...">
+        <button>Search</button>
+    </div>
+  </header>
+
+  <section class="featured-products">
+
+    <div class="product-grid">
+        <div class="product-card" onclick="openProductDetails('product1')">
+            <img src="../foto/f1.jpg" alt="Skincare Set">
+            <h3>Deluxe Skincare Set</h3>
+            <p>$49.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product2')">
+            <img src="../foto/k2.jpg" alt="Cookware Set">
+            <h3>Non-stick Cookware Set</h3>
+            <p>$89.99</p>
+        </div>
+     
+        <div class="product-card" onclick="openProductDetails('product3')">
+            <img src="../foto/f3.jpg" alt="Makeup Kit">
+            <h3>Pro Makeup Kit</h3>
+            <p>$59.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product4')">
+            <img src="../foto/s11.jpg" alt="Set of Sports Balls">
+            <h3>Set of Sports Balls</h3>
+            <p>$49.99</p>
+        </div>
+   
+
+        <div class="product-card" onclick="openProductDetails('product5')">
+            <img src="../foto/f5.jpg" alt="Hair Styling Kit">
+            <h3>Hair Styling Kit</h3>
+            <p>$39.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product6')">
+            <img src="../foto/e3.jpg" alt="Tablet Z">
+            <h3>Tablet </h3>
+            <p>$399.99</p>
+        </div>
+        
+      
+     
+        <div class="product-card" onclick="openProductDetails('product7')">
+            <img src="../foto/k5.jpg" alt="Cushion Set">
+            <h3>Cozy Cushion Set</h3>
+            <p>$34.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product8')">
+            <img src="../foto/f9.jpg" alt="Nail Care Kit">
+            <h3>Complete Nail Care Kit</h3>
+            <p>$34.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product9')">
+            <img src="../foto/e4.jpg" alt="Bluetooth Speaker">
+            <h3>Bluetooth Speaker</h3>
+            <p>$89.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product10')">
+            <img src="../foto/f10.jpg" alt="Luxury Lipstick Set">
+            <h3>Luxury Lipstick Set</h3>
+            <p>$54.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product11')">
+            <img src="../foto/k10.jpg" alt="Towel Set">
+            <h3>Luxury Towel Set</h3>
+            <p>$54.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product12')">
+            <img src="../foto/s6.jpg" alt="Golf Set">
+            <h3>Complete Golf Set</h3>
+            <p>$299.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product13')">
+            <img src="../foto/book2.jpg" alt="Book Cover">
+            <h3>To Kill a Mockingbird</h3>
+            <p>$18.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product14')">
+            <img src="../foto/k1.jpg" alt="Kitchen Appliance">
+            <h3>Premium Blender</h3>
+            <p>$59.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product15')">
+            <img src="../foto/book11.jpg" alt="Book Cover">
+            <h3>Crime and Punishment</h3>
+            <p>$17.99</p>
+        </div>
+        <div class="product-card" onclick="openProductDetails('product16')">
+            <img src="../foto/e12.jpg" alt="Portable Projector">
+            <h3>Portable Projector</h3>
+            <p>$249.99</p>
+        </div> 
+  
+   
+        
+    </div>
+</section>
+
+  <section id="home" class="banner">
+    <div class="banner-content">
+      <h2>Exclusive Sales at WebBuy</h2>
+      <p>Save big on your favorite categories! Discover unbeatable deals on electronics, fashion, home essentials, and more.</p>
+      <p>Shop now and take advantage of limited-time offers.</p>
+      <a href="#head" class="secondary-button">Shop Now</a>
+    </div>
+    <div class="banner-image">
+      <img src="../foto/sales.jpg" alt="Sales promotion illustration">
+    </div>
+  </section>
+  
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeProductDetails()">×</span>
+        <div class="modal-left">
+            <img id="modal-image" src="" alt="Product Image">
+        </div>
+        <div class="modal-right">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p><br>
+            <button onclick="addToCart()" id="add-to-cart-btn" data-id="123">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+  <footer>
+    <p>WebBuy, Where Quality Meets Convenience – Shop Smart, Live Better.</p>
+  </footer>
+  <script >
+    const products = {
+    product1: {
+        image: '../foto/f1.jpg',
+        title: 'Deluxe Skincare Set',
+        description: 'A luxurious set to enhance your skincare routine.',
+        price: '$79.99',
+        salePrice: '$49.99',
+    },
+    product2: {
+        image: '../foto/k2.jpg',
+        title: 'Non-stick Cookware Set',
+        description: 'Durable cookware to make your cooking effortless.',
+        price: '$129.99',
+        salePrice: '$89.99',
+    },
+    product3: {
+        image: '../foto/f3.jpg',
+        title: 'Pro Makeup Kit',
+        description: 'Professional makeup kit for stunning looks.',
+        price: '$89.99',
+        salePrice: '$59.99',
+    },
+    product4: {
+        image: '../foto/s11.jpg',
+        title: 'Set of Sports Balls',
+        description: 'Complete set for all your favorite sports.',
+        price: '$69.99',
+        salePrice: '$49.99',
+    },
+    product5: {
+        image: '../foto/f5.jpg',
+        title: 'Hair Styling Kit',
+        description: 'Style your hair effortlessly with this kit.',
+        price: '$59.99',
+        salePrice: '$39.99',
+    },
+    product6: {
+        image: '../foto/e3.jpg',
+        title: 'Tablet',
+        description: 'A powerful tablet for work and play.',
+        price: '$499.99',
+        salePrice: '$399.99',
+    },
+    product7: {
+        image: '../foto/k5.jpg',
+        title: 'Cozy Cushion Set',
+        description: 'Add comfort and style to your home with these cushions.',
+        price: '$49.99',
+        salePrice: '$34.99',
+    },
+    product8: {
+        image: '../foto/f9.jpg',
+        title: 'Complete Nail Care Kit',
+        description: 'Everything you need for perfect nails.',
+        price: '$49.99',
+        salePrice: '$34.99',
+    },
+    product9: {
+        image: '../foto/e4.jpg',
+        title: 'Bluetooth Speaker',
+        description: 'Portable speaker with exceptional sound quality.',
+        price: '$129.99',
+        salePrice: '$89.99',
+    },
+    product10: {
+        image: '../foto/f10.jpg',
+        title: 'Luxury Lipstick Set',
+        description: 'High-quality lipstick set for every occasion.',
+        price: '$79.99',
+        salePrice: '$54.99',
+    },
+    product11: {
+        image: '../foto/k10.jpg',
+        title: 'Luxury Towel Set',
+        description: 'Soft and absorbent towels for your home.',
+        price: '$79.99',
+        salePrice: '$54.99',
+    },
+    product12: {
+        image: '../foto/s6.jpg',
+        title: 'Complete Golf Set',
+        description: 'Premium set for golf enthusiasts.',
+        price: '$499.99',
+        salePrice: '$299.99',
+    },
+    product13: {
+        image: '../foto/book2.jpg',
+        title: 'To Kill a Mockingbird',
+        description: 'A classic novel by Harper Lee.',
+        price: '$29.99',
+        salePrice: '$18.99',
+    },
+    product14: {
+        image: '../foto/k1.jpg',
+        title: 'Premium Blender',
+        description: 'High-performance blender for your kitchen.',
+        price: '$99.99',
+        salePrice: '$59.99',
+    },
+    product15: {
+        image: '../foto/book11.jpg',
+        title: 'Crime and Punishment',
+        description: 'A literary masterpiece by Fyodor Dostoevsky.',
+        price: '$34.99',
+        salePrice: '$17.99',
+    },
+    product16: {
+        image: '../foto/e12.jpg',
+        title: 'Portable Projector',
+        description: 'Compact projector for your entertainment needs.',
+        price: '$399.99',
+        salePrice: '$249.99',
+    },
+};
+  </script>
+  <script src="script.js"></script>
+      <script src="categories/search.js"></script>
+</body>
+</html>

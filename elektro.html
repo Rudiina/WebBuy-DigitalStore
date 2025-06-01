@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ElectroShop - Online Electronics Store</title>
+    <link rel="stylesheet" href="stilkat.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ElectroShop</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../kategori.html">Categories</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="1" onclick="openProductDetails('product1')">
+                <img src="../../foto/e1.jpg" alt="Gaming Console">
+                <h3>Gaming Console</h3>
+                <p>$499.99</p>
+            </div>
+            <div class="product-card" data-id="2" onclick="openProductDetails('product2')">
+                <img src="../../foto/e2.jpg" alt="Smartwatch Y">
+                <h3>Smartwatch</h3>
+                <p>$199.99</p>
+            </div>
+            <div class="product-card"data-id="3" onclick="openProductDetails('product3')">
+                <img src="../../foto/e3.jpg" alt="Tablet Z">
+                <h3>Tablet </h3>
+                <p>$399.99</p>
+            </div>
+            <div class="product-card" data-id="4" onclick="openProductDetails('product4')">
+                <img src="../../foto/e4.jpg" alt="Bluetooth Speaker">
+                <h3>Bluetooth Speaker</h3>
+                <p>$89.99</p>
+            </div>
+            <div class="product-card" data-id="5" onclick="openProductDetails('product5')">
+                <img src="../../foto/e5.jpg" alt="Action Camera">
+                <h3>Action Camera</h3>
+                <p>$249.99</p>
+            </div>
+            <div class="product-card" data-id="6" onclick="openProductDetails('product6')">
+                <img src="../../foto/e6.jpg" alt="Drone Pro">
+                <h3>Drone Pro</h3>
+                <p>$799.99</p>
+            </div>
+            <div class="product-card" data-id="7" onclick="openProductDetails('product7')">
+                <img src="../../foto/e7.jpg" alt="Home Security System">
+                <h3>Home Security System</h3>
+                <p>$299.99</p>
+            </div>
+            <div class="product-card" data-id="8"  onclick="openProductDetails('product8')">
+                <img src="../../foto/e8.jpg" alt="Smart Thermostat">
+                <h3>Smart Thermostat</h3>
+                <p>$149.99</p>
+            </div>
+            <div class="product-card" data-id="9" onclick="openProductDetails('product9')">
+                <img src="../../foto/e9.jpg" alt="Electric Scooter">
+                <h3>Electric Scooter</h3>
+                <p>$699.99</p>
+            </div>
+            <div class="product-card" data-id="10" onclick="openProductDetails('product10')">
+                <img src="../../foto/e10.jpg" alt="VR Headset">
+                <h3>VR Headset</h3>
+                <p>$399.99</p>
+            </div>
+            <div class="product-card" data-id="11"  onclick="openProductDetails('product11')">
+                <img src="../../foto/e11.jpg" alt="Smart Home Hub">
+                <h3>Smart Home Hub</h3>
+                <p>$129.99</p>
+            </div>
+            <div class="product-card" data-id="12"  onclick="openProductDetails('product12')">
+                <img src="../../foto/e12.jpg" alt="Portable Projector">
+                <h3>Portable Projector</h3>
+                <p>$249.99</p>
+            </div>            
+        </div>
+    </section>
+
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">×</span>
+            <div class="modal-left">
+                <img id="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p><br>
+                <button id="add-to-cart-btn" data-id="123">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>Shop smart, live better with WebBuy.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = {
+    product1: {
+        image: '../../foto/e1.jpg',
+        title: 'Gaming Console',
+        description: 'A next-gen gaming console for immersive entertainment.',
+        price: '$499.99',
+    },
+    product2: {
+        image: '../../foto/e2.jpg',
+        title: 'Smartwatch ',
+        description: 'Stay connected with style using our advanced smartwatch.',
+        price: '$199.99',
+    },
+    product3: {
+        image: '../../foto/e3.jpg',
+        title: 'Tablet ',
+        description: 'A sleek tablet for work and play on the go.',
+        price: '$399.99',
+    },
+    product4: {
+        image: '../../foto/e4.jpg',
+        title: 'Bluetooth Speaker',
+        description: 'Portable and powerful Bluetooth speaker with crisp sound.',
+        price: '$89.99',
+    },
+    product5: {
+        image: '../../foto/e5.jpg',
+        title: 'Action Camera',
+        description: 'Capture your adventures with this rugged action camera.',
+        price: '$249.99',
+    },
+    product6: {
+        image: '../../foto/e6.jpg',
+        title: 'Drone Pro',
+        description: 'Explore new heights with our high-performance drone.',
+        price: '$799.99',
+    },
+    product7: {
+        image: '../../foto/e7.jpg',
+        title: 'Home Security System',
+        description: 'Keep your home safe with this advanced security system.',
+        price: '$299.99',
+    },
+    product8: {
+        image: '../../foto/e8.jpg',
+        title: 'Smart Thermostat',
+        description: 'Efficiently control your home’s temperature.',
+        price: '$149.99',
+    },
+    product9: {
+        image: '../../foto/e9.jpg',
+        title: 'Electric Scooter',
+        description: 'Eco-friendly transportation for your daily commute.',
+        price: '$699.99',
+    },
+    product10: {
+        image: '../../foto/e10.jpg',
+        title: 'VR Headset',
+        description: 'Immerse yourself in virtual worlds with this VR headset.',
+        price: '$399.99',
+    },
+    product11: {
+        image: '../../foto/e11.jpg',
+        title: 'Smart Home Hub',
+        description: 'Control your smart home devices with ease.',
+        price: '$129.99',
+    },
+    product12: {
+        image: '../../foto/e12.jpg',
+        title: 'Portable Projector',
+        description: 'Bring the theater experience anywhere with this projector.',
+        price: '$249.99',
+    },
+};
+    </script>
+    <script src="search.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>

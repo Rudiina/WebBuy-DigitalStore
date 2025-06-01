@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Discount Store</title>
+  <link rel="stylesheet" href="stilside.css">
+  <link rel="stylesheet" href="categories/stilkat.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Sports Discount Store</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="kategori.html">Categories</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="banner">
+    <div class="banner-content">
+      <h2>Get Your Favorite Sports Gear with Big Discounts!</h2>
+      <p>Find the best deals on top-quality sports equipment for all athletes.</p>
+      <a href="#product-categories" class="secondary-button">Shop Now</a>
+    </div>
+    <div class="banner-image">
+      <img src="../foto/scover.jpg" alt="Sports Gear Banner">
+    </div>
+  </div>
+
+  <section id="product-categories">
+    <h2 class="centered-heading">Popular Sports Categories</h2>
+    <div class="categories-grid">
+      <div class="category-card">
+        <h3>Football Gear</h3>
+        <p>Explore our exclusive football products, from cleats to jerseys.</p><br>
+        <button class="btn" onclick="showCategory('football')">Shop Football Gear</button>
+      </div>
+      <div class="category-card">
+        <h3>Running Shoes</h3>
+        <p>Find the best running shoes with amazing discounts.</p><br>
+        <button class="btn" onclick="showCategory('running')">Shop Running Shoes</button>
+      </div>
+      <div class="category-card">
+        <h3>Fitness Equipment</h3>
+        <p>Get all your fitness essentials at a fraction of the cost.</p><br>
+        <button class="btn" onclick="showCategory('fitness')">Shop Fitness Equipment</button>
+      </div>
+    </div>
+  </section>
+  
+  <section id="product-categories">
+    <h2 class="centered-heading">Popular Sports Categories</h2>
+    <section class="featured-products">
+        <h2>Featured Products on Sale</h2>
+        <div class="product-grid">
+          <div class="product-card football" data-id="111" onclick="openProductDetails('product1')">
+            <img src="../foto/sp1.jpg" alt="Football Gear">
+            <h3>Football Cleats</h3>
+            <p>$49.99</p>
+            <button  >Add to Cart</button>
+          </div>
+          <div class="product-card football" data-id="112" onclick="openProductDetails('product2')">
+            <img src="../foto/sp.jpg" alt="Football Gear" >
+            <h3>Football Jersey</h3>
+            <p>$29.99</p>
+            <button >Add to Cart</button>
+          </div>
+          <div class="product-card football" data-id="113" onclick="openProductDetails('product3')">
+            <img src="../foto/sp2.jpg" alt="Knee Protectors">
+            <h3>Knee Protectors</h3>
+            <p>$29.99</p>
+            <button>Add to Cart</button>
+        </div>        
+        <div class="product-card fitness" data-id="114" onclick="openProductDetails('product4')">
+            <img src="../foto/sp3.jpg" alt="Gym Bench" >
+            <h3>Gym Bench</h3>
+            <p>$149.99</p>
+            <button>Add to Cart</button>
+        </div>
+        
+          <div class="product-card football" data-id="115" onclick="openProductDetails('product5')">
+            <img src="../foto/sp4.jpg" alt="Goalkeeper Gloves" >
+            <h3>Goalkeeper Gloves</h3>
+            <p>$24.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card running" data-id="116" onclick="openProductDetails('product6')">
+            <img src="../foto/sp5.jpg" alt="Trail Running Shoes" >
+            <h3>Trail Running Shoes</h3>
+            <p>$54.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card running" data-id="117" onclick="openProductDetails('product7')">
+            <img src="../foto/sp6.jpg" alt="Indoor Soccer Shoes" >
+            <h3>Indoor Soccer Shoes</h3>
+            <p>$44.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card running" data-id="118" onclick="openProductDetails('product8')">
+            <img src="../foto/sp7.jpg" alt="Basketball Shoes" >
+            <h3>Basketball Shoes</h3>
+            <p>$59.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card football " data-id="119" onclick="openProductDetails('product9')">
+            <img src="../foto/sp8.jpg" alt="Training Cones" >
+            <h3>Training Cones</h3>
+            <p>$14.99</p>
+            <button>Add to Cart</button>
+          </div>
+
+          <div class="product-card fitness"  data-id="120" onclick="openProductDetails('product10')">
+            <img src="../foto/sp9.jpg" alt="Fitness Equipment" >
+            <h3>Fitness Dumbbells</h3>
+            <p>$29.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card fitness"  data-id="121" onclick="openProductDetails('product11')">
+            <img src="../foto/sp10.jpg" alt="Fitness Equipment">
+            <h3>Dumbbell Set</h3>
+            <p>$89.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card fitness"  data-id="122" onclick="openProductDetails('product12')">
+            <img src="../foto/sp11.jpg" alt="Resistance Bands" >
+            <h3>Resistance Bands </h3>
+            <p>$19.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card fitness"  data-id="124" onclick="openProductDetails('product13')">
+            <img src="../foto/sp12.jpg" alt="Pull-Up Bar" >
+            <h3> Pull-Up Bar</h3>
+            <p>$84.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card fitness"  data-id="125" onclick="openProductDetails('product14')">
+            <img src="../foto/sp13.jpg" alt="Foldable Treadmill">
+            <h3> Treadmill</h3>
+            <p>$399.99</p>
+            <button>Add to Cart</button>
+          </div>
+          <div class="product-card running" data-id="126" onclick="openProductDetails('product15')">
+            <img src="../foto/sp14.jpg" alt="Running Shoes" >
+            <h3>Light Running Shoes</h3>
+            <p>$74.99</p>
+            <button>Add to Cart</button>
+        </div>
+          <div class="product-card running"  data-id="127" onclick="openProductDetails('product16')">
+            <img src="../foto/sp15.jpg" alt="Hiking Shoes" >
+            <h3>Durable Hiking Shoes</h3>
+            <p>$69.99</p>
+            <button>Add to Cart</button>
+          </div>
+        </div>
+      </section> </section>    
+
+      <div id="product-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">×</span>
+            <div class="modal-left">
+                <img id="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p><br>
+                <button id="add-to-cart-btn" data-id="123">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+      <footer>
+        <p>Empowering athletes with unbeatable deals on premium sports gear. Shop smarter, play harder!</p>
+      </footer>
+   
+  <script>
+    const products = {
+      product1: {
+        title: "Football Cleats",
+        description: "High-quality football cleats for all players.",
+        price: "$49.99",
+        image: "../foto/sp1.jpg"
+    },
+    product2: {
+        title: "Football Jersey",
+        description: "Comfortable and stylish football jersey.",
+        price: "$29.99",
+        image: "../foto/sp.jpg"
+    },
+    product3:{
+        title: "Knee Protectors",
+        description: "Durable knee protectors for added safety during play.",
+        price: "$29.99",
+        image: "../foto/sp2.jpg"
+    },
+    product4: {
+        title: "Gym Bench",
+        description: "Sturdy and adjustable gym bench for all your workouts.",
+        price: "$149.99",
+        image: "../foto/sp3.jpg"
+    },
+    product5: {
+        title: "Goalkeeper Gloves",
+        description: "Professional goalkeeper gloves for maximum grip and comfort.",
+        price: "$24.99",
+        image: "../foto/sp4.jpg"
+    },
+    product6: {
+        title: "Trail Running Shoes",
+        description: "Perfect shoes for trail running with excellent grip.",
+        price: "$54.99",
+        image: "../foto/sp5.jpg"
+    },
+    product7: {
+        title: "Indoor Soccer Shoes",
+        description: "Lightweight and durable indoor soccer shoes.",
+        price: "$44.99",
+        image: "../foto/sp6.jpg"
+    },
+    product8: {
+        title: "Basketball Shoes",
+        description: "High-performance shoes for basketball enthusiasts.",
+        price: "$59.99",
+        image: "../foto/sp7.jpg"
+    },
+    product9: {
+        title: "Training Cones",
+        description: "Essential training cones for drills and exercises.",
+        price: "$14.99",
+        image: "../foto/sp8.jpg"
+    },
+    product10: {
+        title: "Fitness Dumbbells",
+        description: "Premium dumbbells for weight training at home.",
+        price: "$29.99",
+        image: "../foto/sp9.jpg"
+    },
+    product11: {
+        title: "Dumbbell Set",
+        description: "Complete dumbbell set for full-body workouts.",
+        price: "$89.99",
+        image: "../foto/sp10.jpg"
+    },
+    product12: {
+        title: "Resistance Bands",
+        description: "Versatile resistance bands for strength training.",
+        price: "$19.99",
+        image: "../foto/sp11.jpg"
+    },
+    product13: {
+        title: "Pull-Up Bar",
+        description: "Durable pull-up bar for home gym use.",
+        price: "$84.99",
+        image: "../foto/sp12.jpg"
+    },
+    product14: {
+        title: "Foldable Treadmill",
+        description: "Space-saving treadmill for home workouts.",
+        price: "$399.99",
+        image: "../foto/sp13.jpg"
+    },
+    product15: {
+        title: "Light Running Shoes",
+        description: "Comfortable and breathable running shoes.",
+        price: "$74.99",
+        image: "../foto/sp14.jpg"
+    },
+    product16: {
+        title: "Durable Hiking Shoes",
+        description: "Sturdy hiking shoes for outdoor adventures.",
+        price: "$69.99",
+        image: "../foto/sp15.jpg"
+    }
+};
+
+  </script>
+
+     <script src="categories/search.js"></script>
+     <script src="script.js"></script>
+     <script src="scriptk.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book - Online Bookstore</title>
+    <link rel="stylesheet" href="stilkat.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../kategori.html">Categories</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for books...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <h2>Featured Books</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="25" onclick="openProductDetails('book1')">
+                <img src="../../foto/book1.jpg" alt="Book Cover">
+                <h3>The Great Gatsby</h3>
+                <p>$15.99</p>
+            </div>
+            <div class="product-card" data-id="26" onclick="openProductDetails('book2')">
+                <img src="../../foto/book2.jpg" alt="Book Cover">
+                <h3>To Kill a Mockingbird</h3>
+                <p>$18.99</p>
+            </div>
+            <div class="product-card" data-id="27" onclick="openProductDetails('book3')">
+                <img src="../../foto/book3.jpg" alt="Book Cover">
+                <h3>1984</h3>
+                <p>$13.99</p>
+            </div>
+            <div class="product-card" data-id="28" onclick="openProductDetails('book4')">
+                <img src="../../foto/book4.jpg" alt="Book Cover">
+                <h3>Pride and Prejudice</h3>
+                <p>$10.99</p>
+            </div>
+            <div class="product-card" data-id="29" onclick="openProductDetails('book5')">
+                <img src="../../foto/book5.jpg" alt="Book Cover">
+                <h3>The Catcher in the Rye</h3>
+                <p>$12.99</p>
+            </div>
+            <div class="product-card" data-id="30" onclick="openProductDetails('book6')">
+                <img src="../../foto/book6.jpg" alt="Book Cover">
+                <h3>Moby Dick</h3>
+                <p>$16.99</p>
+            </div>
+            <div class="product-card"data-id="31"  onclick="openProductDetails('book7')">
+                <img src="../../foto/book7.jpg" alt="Book Cover">
+                <h3>War and Peace</h3>
+                <p>$20.99</p>
+            </div>
+            <div class="product-card"data-id="32"  onclick="openProductDetails('book8')">
+                <img src="../../foto/book8.jpg" alt="Book Cover">
+                <h3>The Odyssey</h3>
+                <p>$14.99</p>
+            </div>
+            <div class="product-card" data-id="33" onclick="openProductDetails('book9')">
+                <img src="../../foto/book9.jpg" alt="Book Cover">
+                <h3>Jane Eyre</h3>
+                <p>$11.99</p>
+            </div>
+            <div class="product-card" data-id="34" onclick="openProductDetails('book10')">
+                <img src="../../foto/book10.jpg" alt="Book Cover">
+                <h3>The Lord of the Rings</h3>
+                <p>$25.99</p>
+            </div>
+            <div class="product-card" data-id="35" onclick="openProductDetails('book11')">
+                <img src="../../foto/book11.jpg" alt="Book Cover">
+                <h3>Crime and Punishment</h3>
+                <p>$17.99</p>
+            </div>
+            <div class="product-card" data-id="36" onclick="openProductDetails('book12')">
+                <img src="../../foto/book12.jpg" alt="Book Cover">
+                <h3>Brave New World</h3>
+                <p>$15.49</p>
+            </div>            
+        </div>
+    </section>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">×</span>
+            <div class="modal-left">
+                <img id="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p><br>
+                <button id="add-to-cart-btn" data-id="123">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Explore your next great read with BookWeb.</p>
+        </div>
+    </footer>
+
+    <script >const products = {
+        book1: {
+            image: '../../foto/book1.jpg',
+            title: 'The Great Gatsby',
+            description: 'A classic novel by F. Scott Fitzgerald exploring themes of wealth, love, and the American dream.',
+            price: '$15.99',
+        },
+        book2: {
+            image: '../../foto/book2.jpg',
+            title: 'To Kill a Mockingbird',
+            description: 'Harper Lee\'s timeless story of race, injustice, and morality.',
+            price: '$18.99',
+        },
+        book3: {
+            image: '../../foto/book3.jpg',
+            title: '1984',
+            description: 'George Orwell\'s dystopian vision of a totalitarian society.',
+            price: '$13.99',
+        },
+        book4: {
+            image: '../../foto/book4.jpg',
+            title: 'Pride and Prejudice',
+            description: 'Jane Austen\'s tale of love and societal expectations.',
+            price: '$10.99',
+        },
+        book5: {
+            image: '../../foto/book5.jpg',
+            title: 'The Catcher in the Rye',
+            description: 'J.D. Salinger\'s story of teenage rebellion and angst.',
+            price: '$12.99',
+        },
+        book6: {
+            image: '../../foto/book6.jpg',
+            title: 'Moby Dick',
+            description: 'Herman Melville\'s epic tale of obsession and revenge.',
+            price: '$16.99',
+        },
+        book7: {
+            image: '../../foto/book7.jpg',
+            title: 'War and Peace',
+            description: 'Leo Tolstoy\'s masterpiece of Russian history and human emotion.',
+            price: '$20.99',
+        },
+        book8: {
+            image: '../../foto/book8.jpg',
+            title: 'The Odyssey',
+            description: 'Homer\'s epic poem of heroism and adventure.',
+            price: '$14.99',
+        },
+        book9: {
+            image: '../../foto/book9.jpg',
+            title: 'Jane Eyre',
+            description: 'Charlotte Brontë\'s enduring story of love and resilience.',
+            price: '$11.99',
+        },
+        book10: {
+            image: '../../foto/book10.jpg',
+            title: 'The Lord of the Rings',
+            description: 'J.R.R. Tolkien\'s legendary fantasy epic.',
+            price: '$25.99',
+        },
+        book11: {
+            image: '../../foto/book11.jpg',
+            title: 'Crime and Punishment',
+            description: 'Fyodor Dostoevsky\'s exploration of morality and redemption.',
+            price: '$17.99',
+        },
+        book12: {
+            image: '../../foto/book12.jpg',
+            title: 'Brave New World',
+            description: 'Aldous Huxley\'s chilling vision of a dystopian future.',
+            price: '$15.49',
+        },
+    };
+    
+    </script>
+    <script src="search.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomeStyle - Modern Home & Kitchen</title>
+    <link rel="stylesheet" href="stilkat.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>HomeStyle</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../kategori.html">Categories</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for home essentials...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="49" onclick="openProductDetails('product1')">
+                <img src="../../foto/k1.jpg" alt="Kitchen Appliance">
+                <h3>Premium Blender</h3>
+                <p>$59.99</p>
+            </div>
+            <div class="product-card" data-id="50" onclick="openProductDetails('product2')">
+                <img src="../../foto/k2.jpg" alt="Cookware Set">
+                <h3>Non-stick Cookware Set</h3>
+                <p>$89.99</p>
+            </div>
+            <div class="product-card" data-id="51" onclick="openProductDetails('product3')">
+                <img src="../../foto/k3.jpg" alt="Living Room Lamp">
+                <h3>Elegant Floor Lamp</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="product-card" data-id="52" onclick="openProductDetails('product4')">
+                <img src="../../foto/k4.jpg" alt="Coffee Maker">
+                <h3>Advanced Coffee Maker</h3>
+                <p>$119.99</p>
+            </div>
+            <div class="product-card" data-id="53" onclick="openProductDetails('product5')">
+                <img src="../../foto/k5.jpg" alt="Cushion Set">
+                <h3>Cozy Cushion Set</h3>
+                <p>$34.99</p>
+            </div>
+            <div class="product-card" data-id="54" onclick="openProductDetails('product6')">
+                <img src="../../foto/k6.jpg" alt="Cutlery Set">
+                <h3>Stainless Steel Cutlery</h3>
+                <p>$39.99</p>
+            </div>
+            <div class="product-card"  data-id="55"onclick="openProductDetails('product7')">
+                <img src="../../foto/k7.jpg" alt="Microwave Oven">
+                <h3>Compact Microwave Oven</h3>
+                <p>$99.99</p>
+            </div>
+            <div class="product-card" data-id="56" onclick="openProductDetails('product8')">
+                <img src="../../foto/k8.jpg" alt="Throw Blanket">
+                <h3>Soft Throw Blanket</h3>
+                <p>$29.99</p>
+            </div>
+            <div class="product-card" data-id="57" onclick="openProductDetails('product9')">
+                <img src="../../foto/k9.jpg" alt="Toaster">
+                <h3>4-Slice Toaster</h3>
+                <p>$44.99</p>
+            </div>
+            <div class="product-card"  data-id="58" onclick="openProductDetails('product10')">
+                <img src="../../foto/k10.jpg" alt="Towel Set">
+                <h3>Luxury Towel Set</h3>
+                <p>$54.99</p>
+            </div>
+            <div class="product-card" data-id="59" onclick="openProductDetails('product11')">
+                <img src="../../foto/k11.jpg" alt="Storage Basket">
+                <h3>Woven Storage Basket</h3>
+                <p>$24.99</p>
+            </div>
+            <div class="product-card" data-id="60" onclick="openProductDetails('product12')">
+                <img src="../../foto/k12.jpg" alt="Air Fryer">
+                <h3>Digital Air Fryer</h3>
+                <p>$129.99</p>
+            </div>
+        </div>
+        
+        </div>
+    </section>
+
+   <div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeProductDetails()">×</span>
+        <div class="modal-left">
+            <img id="modal-image" src="" alt="Product Image">
+        </div>
+        <div class="modal-right">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p><br>
+            <button id="add-to-cart-btn" data-id="123">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+
+    <footer>
+        <div class="footer-content">
+            <p>Equip your home with modern and cozy essentials from HomeStyle.</p>
+        </div>
+    </footer>
+
+    <script >
+        const products = {
+        product1: {
+            image: '../../foto/k1.jpg',
+            title: 'Premium Blender',
+            description: 'A high-quality blender for all your mixing needs, perfect for smoothies and soups.',
+            price: '$59.99',
+        },
+        product2: {
+            image: '../../foto/k2.jpg',
+            title: 'Non-stick Cookware Set',
+            description: 'A complete set of non-stick cookware for effortless cooking and easy cleaning.',
+            price: '$89.99',
+        },
+        product3: {
+            image: '../../foto/k3.jpg',
+            title: 'Elegant Floor Lamp',
+            description: 'A stylish floor lamp to brighten up your living space with a touch of elegance.',
+            price: '$49.99',
+        },
+        product4: {
+            image: '../../foto/k4.jpg',
+            title: 'Advanced Coffee Maker',
+            description: 'Brew your perfect cup of coffee every morning with this advanced coffee maker.',
+            price: '$119.99',
+        },
+        product5: {
+            image: '../../foto/k5.jpg',
+            title: 'Cozy Cushion Set',
+            description: 'Add comfort and style to your living room with this cozy cushion set.',
+            price: '$34.99',
+        },
+        product6: {
+            image: '../../foto/k6.jpg',
+            title: 'Stainless Steel Cutlery',
+            description: 'Durable and stylish stainless steel cutlery set for your dining experience.',
+            price: '$39.99',
+        },
+        product7: {
+            image: '../../foto/k7.jpg',
+            title: 'Compact Microwave Oven',
+            description: 'A compact and efficient microwave oven for quick and easy meal preparation.',
+            price: '$99.99',
+        },
+        product8: {
+            image: '../../foto/k8.jpg',
+            title: 'Soft Throw Blanket',
+            description: 'A warm and cozy throw blanket to enhance your relaxation time.',
+            price: '$29.99',
+        },
+        product9: {
+            image: '../../foto/k9.jpg',
+            title: '4-Slice Toaster',
+            description: 'A modern 4-slice toaster for evenly toasted bread every time.',
+            price: '$44.99',
+        },
+        product10: {
+            image: '../../foto/k10.jpg',
+            title: 'Luxury Towel Set',
+            description: 'Soft and luxurious towels to elevate your bath experience.',
+            price: '$54.99',
+        },
+        product11: {
+            image: '../../foto/k11.jpg',
+            title: 'Woven Storage Basket',
+            description: 'Stylish and functional woven storage baskets for your home.',
+            price: '$24.99',
+        },
+        product12: {
+            image: '../../foto/k12.jpg',
+            title: 'Digital Air Fryer',
+            description: 'A state-of-the-art air fryer for healthier and delicious meals.',
+            price: '$129.99',
+        },
+};
+
+    </script>
+    <script src="search.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

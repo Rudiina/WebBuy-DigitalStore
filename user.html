@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <style>
+  
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial';
+        }
+
+        body {
+            background-color: #F5F8FA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #signin-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .signin-section, .signup-section {
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #022436;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 6px;
+            display: block;
+            color: #4e6195;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f4f4f441;
+            color: #022436;
+        }
+
+        input:focus, select:focus {
+            border-color: #88C273;
+            outline: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #88C273;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4e6195;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .link a {
+            color: #88C273;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-section {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="signin-overlay">
+        <!-- Sign In Section -->
+        <div class="signin-section">
+            <h2>Sign In</h2>
+            <form id="signin-form">
+                <label for="signin-email">Email</label>
+                <input type="email" id="signin-email" name="email" placeholder="Enter your email" required>
+
+                <label for="signin-password">Password</label>
+                <input type="password" id="signin-password" name="password" placeholder="Enter your password" required>
+                <div class="error"></div>
+
+                <button type="submit">Sign In</button>
+            </form>
+
+            <div class="link">
+                <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+            </div>
+        </div>
+
+        <div class="signup-section" id="signup-section"><br><br>
+            <h2>Create an Account</h2>
+            <form id="signup-form"  method="POST">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
+
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Prefer not to say</option>
+                </select>
+
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="signup-email" placeholder="Enter your email" required>
+
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="signup-password" placeholder="Create a password" required>
+
+                <input type="hidden" name="signup" value="true">
+                <button type="submit"> Sign Up</button>
+            </form>
+
+            <div class="link">
+                <p>Already have an account? <a href="#" id="show-signin">Sign In</a></p>
+            </div>
+        </div>
+        <br>
+        <p style="text-align: center;">If you don't want to create an account, then</p><br>
+        <button type="button" id="change-btn" style="background-color: #4e6195;">
+            <a href="index.html" style="text-decoration: none; color: white;">Continue</a>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const showSignupLink = document.getElementById("show-signup");
+            const showSigninLink = document.getElementById("show-signin");
+            const signinSection = document.querySelector(".signin-section");
+            const signupSection = document.getElementById("signup-section");
+
+            showSignupLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                signinSection.style.display = "none";
+                signupSection.style.display = "block";
+            });
+
+            showSigninLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                signupSection.style.display = "none";
+                signinSection.style.display = "block";
+            });
+
+            const signinForm = document.getElementById("signin-form");
+            signinForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                window.location.href = "index.html";  
+            });
+
+            const signupForm = document.getElementById("signup-form");
+            signupForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+                window.location.href = "index.html";  
+            });
+        });
+    </script>
+
+    <script src="side/scriptuser.js"></script>
+</body>
+</html>

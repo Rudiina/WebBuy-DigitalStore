@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>WebBuy</title>
+</head>
+<style>
+  body {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+body.loaded {
+  opacity: 1;
+}
+section, footer, nav {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+section.loaded, footer.loaded, nav.loaded {
+  opacity: 1;
+}
+</style>
+<body>  
+  <nav>
+    <img width="100px" src="foto/logo.png">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="side/kategori.html">Categories</a></li>
+        <li><a href="#sales">Sales</a></li>
+        <li><a href="side/about.html">About</a></li>
+        <li><a href="side/contact.html">Contact</a></li>
+        <li>
+            <a href="side/account.html"> <img id="auth-status" width="30px" src="foto/user.jpg"alt=""></a>
+        </li>
+    </ul>
+</nav>
+
+
+  <section class="hero" id="home">
+    <h1>Welcome to WebBuy</h1>
+    <p>Your one-stop shop for all your needs. Discover the best products at unbeatable prices!</p>
+    <div class="hero-links">
+      <div class="left-links">
+        <a href="side/discount.html" class="long">Discount</a>
+        <a href="side/offers.html" class="medium">Offers</a>
+        <a href="side/sales.html" class="small">Sale</a>
+    </div>
+    <div class="right-links">
+        <a href="side/about.html" class="long">Information</a>
+        <a href="side/kategori.html" class="medium">Shop Now</a>
+        <a href="side/cart.html" class="small">Cart</a>
+    </div>
+    
+    </div>
+    <section class="scrolling-columns">
+      <div class="scroll-container">
+        <div class="scroll-column">
+          <h3>Book Deals</h3>
+          <a href="side/categories/books.html">Shop Books</a>
+          <a href="side/sales.html">See Sales</a>
+        </div>
+        <div class="scroll-column">
+          <h3>Fashion Offers</h3>
+          <a href="side/categories/clothing.html">Shop Clothing</a>
+          <a href="side/offers.html">See Offers</a>
+        </div>
+        <div class="scroll-column">
+          <h3>Kitchen-Home Goods</h3>
+          <a href="side/categories/kitchen.html">more</a>
+          <a href="side/sales.html">See Sales</a>
+        </div><div class="scroll-column">
+          <h3>Electronics</h3>
+          <a href="side/categories/elektro.html">Shop  Electronics</a>
+          <a href="side/offers.html">See Offers</a>
+        </div>
+        <div class="scroll-column">
+          <h3>Clothing</h3>
+          <a href="side/categories/clothing.html">Shop Clothing</a>
+          <a href="side/sales.html">See Sales</a>
+        </div>
+    </div>
+    </section>
+  </section>
+
+  <section class="categories" id="categories">
+    <div class="category-card" id="electronics">
+      <h2><a href="side/categories/elektro.html" style="text-decoration: none;color: white;">Electronics</a></h2>
+    </div>
+    <div class="category-card" id="clothing">
+      <h2><a href="side/categories/clothing.html" style="text-decoration: none;color: white;">Clothing</a></h2>
+    </div>
+    <div class="category-card" id="home-goods">
+        <h2><a href="side/categories/books.html" style="text-decoration: none; color: white;">Books</a></h2>
+      </div>
+    <div class="category-card" id="beauty">
+      <h2><a href="side/categories/beauty.html" style="text-decoration: none; color: white;">Beauty</a></h2>
+    </div>
+    <div class="category-card" id="sports">
+      <h2><a href="side/categories/sport.html" style="text-decoration: none; color: white;">Sports</a></h2>
+    </div>
+    <div class="category-card" id="sports">
+      <h2><a href="side/contact.html" style="text-decoration: none; color: white;">Contact Us</a></h2>
+      </div>
+  </section>
+
+  <section class="sales-section" id="sales">
+    <h2>Exclusive Sales</h2>
+   <div class="side-links left-links">
+     <a href="side/sales.html">Electronics Sales</a>
+     <a href="side/offers.html">Fashion Offers</a>
+     <a href="side/categories/kitchen.html">Kitchen-Home Goods</a>
+   </div>
+   <div class="side-links right-links">
+     <a href="side/categories/beauty.html">Beauty Picks</a>
+     <a href="side/discount.html">Sports Discounts</a>
+     <a href="side/cart.html">Cart</a>
+   </div>
+
+   <div class="sales-container">
+      <div class="sale-item">
+        <div class="sale-badge">20% OFF</div>
+        <h3>Latest Cooking Utensil </h3>
+        <p>Get 20% off your second cookware set when you buy one.</p>
+        <button><a style="color: white;text-decoration: none; " href="side/offers.html#cookware-set">Shop Now</a></button>
+      </div>
+      <div class="sale-item">
+        <div class="sale-badge">New Arrivals</div>
+        <h3>Newest Electronics</h3>
+        <p>Discover the latest tech gadgets  with amazing offers.</p>
+        <button><a style="color: white;text-decoration: none;" href="side/categories/elektro.html"> Shop Now</a></button>
+     </div>
+    <div class="sale-item">
+      <div class="sale-badge">Buy 1 Get 1 Free</div>
+        <h3>Skincare Set</h3>
+        <p>Buy one skincare set and get a second one free.</p>
+        <button><a style="color: white;text-decoration: none;" href="side/offers.html#skincare-set"> Shop Now</a></button>
+      </div>
+  </section>
+
+<section class="new-categories" >
+  <div class="new-category" id="electronics">
+      <img src="foto/1.jpg" alt="Electronics" id="kategori">
+      <div>
+          <h2 >Electronics</h2>
+          <p>Explore the latest tech gadgets, from smart devices to personal assistants.</p>
+          <button class="explore-btn">
+            <a href="side/categories/elektro.html" style="text-decoration: none;color: white; " >Explore More</a>
+          </button>
+      </div>
+  </div>
+  <div class="new-category" id="clothing">
+      <img src="foto/2.jpg" alt="Clothing">
+      <div>
+          <h2>Clothing</h2>
+          <p>Shop trendy and comfortable clothing for all seasons and occasions.</p>
+          <button class="explore-btn"><a href="side/categories/clothing.html" style="text-decoration: none;color: white; " >Explore More</a></button>
+      </div>
+  </div>
+  <div class="new-category" id="books">     
+          <img src="foto/3.jpg" alt="Books" >
+          <div >
+              <h2>Explore Our Books Collection</h2>
+              <p>Browse through a wide selection of books, from timeless fiction to insightful non-fiction, with something for everyone!</p>
+              <button class="explore-btn"><a href="side/categories/books.html" style="text-decoration: none;color: white; " >Shop Now</a></button>
+          </div>
+  </div>
+  <div class="new-category" id="beauty">
+      <img src="foto/4.jpg" alt="Beauty">
+      <div>
+          <h2>Beauty</h2>
+          <p>Find the best skincare, makeup, and beauty tools for a radiant look.</p>
+          <button class="explore-btn"><a href="side/categories/beauty.html" style="text-decoration: none;color: white; " >Explore More</a></button>
+      </div>
+  </div>
+  <div class="new-category" id="sports">
+      <img src="foto/5.jpg" alt="Sports">
+      <div>
+          <h2>Sports</h2>
+          <p>Get the latest sports gear and apparel for all your fitness needs.</p>
+          <button class="explore-btn"><a href="side/categories/sport.html" style="text-decoration: none;color: white; " >Explore More</a></button>
+      </div>
+  </div>
+  <div class="new-category" id="home-kitchen">
+    <img src="foto/6.jpg" alt="Home & Kitchen">
+    <div>
+        <h2>Home & Kitchen</h2>
+        <p>Discover essential tools, decor, and appliances for a perfect home.</p>
+        <button class="explore-btn">
+            <a href="side/categories/kitchen.html" style="text-decoration: none; color: white;">Explore More</a>
+        </button>
+    </div>
+</div>
+</section>  </section>
+  <br><br><br><br><br><br>
+<footer> <br>
+  <section class="contact-info-section">
+    <div class="info">
+      <h3>About WebBuy</h3>
+      <p>Your trusted shop for top products at great prices. Enjoy a seamless shopping experience and unbeatable deals.</p>
+    </div>
+    <div class="contact">
+      <h3>Contact Us</h3>
+      <p><strong>Email:  </strong>rudinaaliu06@gmail.com</p>
+      <p><strong>Phone:  </strong>+389 72 611 789</p>
+    </div>
+    <div class="contact-form">
+      <h3>Get in Touch</h3>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+</footer>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.classList.add('loaded');
+    const sections = document.querySelectorAll('section, footer, nav');
+    sections.forEach(function(section) {
+        section.classList.add('loaded');
+    });
+});
+ document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.scroll-container');
+    const scrollSpeed = 3; 
+    const scrollInterval = 30; 
+    container.scrollLeft = container.scrollWidth / 2;
+    function autoScroll() {
+        container.scrollBy({
+            left: scrollSpeed,
+            behavior: 'smooth',
+        });
+        if (container.scrollLeft >= container.scrollWidth - container.offsetWidth) {
+            container.scrollLeft = 0;
+        }
+    }
+    setInterval(autoScroll, scrollInterval);
+});
+
+  </script>
+  <script src="side/scriptuser.js"> </script>
+</body>
+</html>
